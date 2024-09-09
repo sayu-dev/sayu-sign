@@ -43,7 +43,8 @@
     "webpack-cli": "5.1.1",
     "webpack-dev-server": "^4.15.0",
     "webpack-merge": "5",
-    "yarn": "^1.22.22"
+    "yarn": "^1.22.22",
+    "postcss-scss": "^4.0.9"
   },
   "packageManager": "yarn@1.0",
   "version": "0.1.0",

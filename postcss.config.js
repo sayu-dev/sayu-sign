@@ -1,5 +1,5 @@
 module.exports = {
-  syntax: require("postcss-scss"), // Add this line to use the SCSS parser
+  parser: "postcss-scss", // Specify postcss-scss parser here
   plugins: [
     require("postcss-import"),
     require("tailwindcss/nesting"),
