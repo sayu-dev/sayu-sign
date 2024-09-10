@@ -104,9 +104,9 @@ RSpec.describe 'Storage Settings' do
                    configs: {
                      access_key_id: 'access_key_id',
                      secret_access_key: 'secret_access_key',
-                     region: 'us-west-1',
+                     region: 'region',
                      bucket: 'bucket',
-                     endpoint: 'https://s3.us-west-1.amazonaws.com'
+                     endpoint: 'endpoint'
                    }
                  })
         end
@@ -116,9 +116,9 @@ RSpec.describe 'Storage Settings' do
 
           fill_in 'Access key ID', with: 'new_access_key_id'
           fill_in 'Secret access key', with: 'new_secret_access_key'
-          fill_in 'Region', with: 'us-west-2'
+          fill_in 'Region', with: 'new_region'
           fill_in 'Bucket', with: 'new_bucket'
-          fill_in 'Endpoint', with: 'https://s3.us-west-2.amazonaws.com'
+          fill_in 'Endpoint', with: 'new_endpoint'
 
           expect do
             click_button 'Save'
@@ -130,9 +130,9 @@ RSpec.describe 'Storage Settings' do
           expect(encrypted_config.value['service']).to eq('aws_s3')
           expect(configs['access_key_id']).to eq('new_access_key_id')
           expect(configs['secret_access_key']).to eq('new_secret_access_key')
-          expect(configs['region']).to eq('us-west-2')
+          expect(configs['region']).to eq('new_region')
           expect(configs['bucket']).to eq('new_bucket')
-          expect(configs['endpoint']).to eq('https://s3.us-west-2.amazonaws.com')
+          expect(configs['endpoint']).to eq('new_endpoint')
         end
       end
 
@@ -223,9 +223,9 @@ RSpec.describe 'Storage Settings' do
 
           fill_in 'Access key ID', with: 'access_key_id'
           fill_in 'Secret access key', with: 'secret_access_key'
-          fill_in 'Region', with: 'us-west-1'
+          fill_in 'Region', with: 'region'
           fill_in 'Bucket', with: 'bucket'
-          fill_in 'Endpoint', with: 'https://s3.us-west-1.amazonaws.com'
+          fill_in 'Endpoint', with: 'endpoint'
 
           expect do
             click_button 'Save'
@@ -237,9 +237,9 @@ RSpec.describe 'Storage Settings' do
           expect(encrypted_config.value['service']).to eq('aws_s3')
           expect(configs['access_key_id']).to eq('access_key_id')
           expect(configs['secret_access_key']).to eq('secret_access_key')
-          expect(configs['region']).to eq('us-west-1')
+          expect(configs['region']).to eq('region')
           expect(configs['bucket']).to eq('bucket')
-          expect(configs['endpoint']).to eq('https://s3.us-west-1.amazonaws.com')
+          expect(configs['endpoint']).to eq('endpoint')
         end
       end
     end
